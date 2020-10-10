@@ -1,0 +1,52 @@
+https://medium.com/apis-and-digital-transformation/four-key-tenets-of-api-design-dfe199109637
+
+ In the REST model, a web resource has underlying
+state, which cannot be seen directly, and what flows between clients and servers is a representation
+of that state. 
+
+ Users can view the representation of a resource in different formats, called media types.
+In principle, all media types for the representation of a particular resource should encode the same
+information, just in different formats
+
+The dominant media type for resource representations in web APIs is JavaScript Object Notation (JSON).
+The primary reasons for JSON’s success are probably that it is simple to understand.  It is now the de facto standard for web APIs, and you should use it
+
+While JSON is very good and very popular, it is not perfect for our purposes. One limitation is that JSON
+can only represent a small number of data types (Null, Boolean, Number, String). The most common types
+we have come across in web API design that are not supported by JSON are dates and times and URLs.
+There are several options for dealing with this limitation—the simplest is to represent them as strings, and
+rely on the context to determine which strings are just strings and which are really stringified dates or
+URLs
+
+The JSON specification says only that a JSON object is a collection of name/value pairs—i
+
+ In this example, the names correspond to properties of a web resource whose representation is the enclosing JSON object. 
+ 
+ These property names
+are sometimes called predicates, a term borrowed from the theory of grammar. Your JSON will be simpler
+and easier to understand if you stick to the principle that the names in your JSON are always property
+names, and the JSON objects always correspond to entities in your API’s data model.
+
+. A better way to express relationships is to use links
+simply pick up the value of ownerLink and use it in an HTTP
+request.  Without
+dogsLink, it is not obvious from the data that it is even possible to navigate from an owner to their dogs.
+An increasing number of APIs from major companies on the web are including links in their data. 
+
+URI templates are like shortcuts, a way to cut across the lawn
+when you have a very specific destination in mind. Templates allow the URLs of a whole family of resources to be communicated in one string, at the cost of
+requiring the client to process the template.
+
+URI templates are most useful if they accept variables whose values are easy for humans to read and
+remember. For example, the URL template 
+https://dogtracker.com/persons/{personID}
+has some utility, but remembering the personID can be almost as hard as remembering the whole URL if
+personID is some obscure and lengthy identifier. By contrast, the following template
+https://dogtracker.com/persons/{personName}
+is more useful because names are very fundamental to the way in which humans deal with the world. 
+
+Query URLs:
+ make query URLs regular and predictable 
+ https://dogtracker.com/persons/search?type=Dog&color=white
+ 
+ 
