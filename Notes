@@ -4,3 +4,8 @@ REST provides Structured access to Resources.
 
 Everyone and their dog wants an API, so you should probably learn how to build them.
 
+a data architecture and design methodology that produces predictable and consistent outputs and behaviors by receiving a set of standard methods called verbs and returning standardized structured data, typically JSON or XML, called the resource.
+
+ Representational State Transfer is a literal description of what's happening. We transition between representations of states and these representations are transformed back and forth between the application and the server. 
+ 
+  You can think of the REST as a librarian and the API as the language used to talk to them. Hey Morton, please get me the 10 most recent articles on digital ethics. Hey Morton, please put this document to the library under the Norwegian Folklore category, and please delete this document from the library as it's no longer relevant.
